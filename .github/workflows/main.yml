@@ -40,7 +40,7 @@ jobs:
       # Inform Humanitec about new image
       - name: Inform Humanitec
         run: |-
-          curl \
+          curl -v \
             --request POST 'https://api.humanitec.io/orgs/'$HUMANITEC_ORG'/images/'$IMAGE_NAME'/builds' \
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
             --header 'Content-Type: application/json' \
